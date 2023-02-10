@@ -38,3 +38,6 @@
 .property-input-form {
   max-width: 400px;
 }
+.property-card {
+  width: clamp(250px, 28%, 400px);
+}

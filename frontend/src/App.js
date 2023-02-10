@@ -85,7 +85,7 @@ function App() {
       </div>
       <div className="mb-3 container-sm d-flex justify-content-center flex-column align-items-center">
         <form className="property-input-form" onSubmit={handleSubmit}>
-          <div className="mb-3 container-sm ">
+          <div className="mb-3 container-sm">
             <label htmlFor="exampleInputEmail1" className="form-label">
               Property ID, postcode or street:
             </label>
@@ -125,9 +125,13 @@ function App() {
         {
           //could be a seperate component with passing props
         }
-        {properties
-          ? properties.map((propertyData) => (
-              <div key={propertyData.id} className="small-box m-5">
+        <div className="container-sm d-flex flex-row flex-wrap align-items-center justify-content-between">
+          {properties &&
+            properties.map((propertyData) => (
+              <div
+                key={propertyData.id}
+                className="property-card m-4 align-self-start"
+              >
                 <strong>
                   {propertyData.street} - {propertyData.outcode}{" "}
                   {propertyData.incode}
@@ -141,8 +145,8 @@ function App() {
                   ))}
                 </ul>
               </div>
-            ))
-          : null}
+            ))}
+        </div>
       </div>
     </div>
   );
